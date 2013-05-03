@@ -1,5 +1,8 @@
 package com.daybysay.helloproject;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -38,6 +41,23 @@ public class MyListActivity extends ListActivity implements OnItemClickListener{
 		ListView list = getListView();
 		list.setAdapter(rAdapter);
 		list.setOnItemClickListener(this);
+		
+		HttpConnection http = new HttpConnection();
+		URL url;
+		try {
+//			url = new URL("http://api.androbook.net/singlecomic/singlecomics/v1/json/?p=gdc6DtInysYZ6S1Iuo+3LwWM8Vu3SDjWfjm+25GfQrr4tdimo0A1vtGwyAd+W9yH");
+			url = new URL("http://www.google.co.jp");
+			http.setUrl(url);
+		} catch (MalformedURLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+		try {
+			http.getKiminotowaJson();
+		} catch (IOException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 	}
 
 	@Override
