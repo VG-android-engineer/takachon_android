@@ -7,6 +7,7 @@ import java.util.List;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Context;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
@@ -17,15 +18,17 @@ public class MyListActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		ArrayList<Row> rows= new ArrayList<Row>();
+//		ArrayList<Row> rows= new ArrayList<Row>();
+		ArrayList<RowInImage> rows = new ArrayList<RowInImage>();
 		setContentView(R.layout.activity_list);
 		for (int i = 0; i < 100; i++) {
-			Row row = new Row();
+			RowInImage row = new RowInImage();
 			row.set_text("テキスト");
 			row.set_title("タイトル");
+			row.setImg(this.getResources().getDrawable(R.drawable.migi));
 			rows.add(row);
 		}
-		RowAdapter rAdapter = new RowAdapter(this, rows);
+		RowInImageAdapter rAdapter = new RowInImageAdapter(this, rows);
 		ListView list = getListView();
 		list.setAdapter(rAdapter);
 	}

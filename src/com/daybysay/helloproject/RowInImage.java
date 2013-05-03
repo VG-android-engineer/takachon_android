@@ -1,17 +1,16 @@
 package com.daybysay.helloproject;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
 public class RowInImage extends Row {
-	private Bitmap img;
+	private Drawable img;
 
-	public Bitmap getImg() {
+	public Drawable getImg() {
 		return img;
 	}
 
-	public void setImg(Bitmap img) {
+	public void setImg(Drawable img) {
 		this.img = img;
 	}
-	
-
 }
