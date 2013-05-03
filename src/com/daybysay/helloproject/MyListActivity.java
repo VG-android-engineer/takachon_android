@@ -18,7 +18,6 @@ public class MyListActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		ArrayList<Row> rows= new ArrayList<Row>();
 		ArrayList<RowInImage> rows = new ArrayList<RowInImage>();
 		setContentView(R.layout.activity_list);
 		for (int i = 0; i < 100; i++) {
